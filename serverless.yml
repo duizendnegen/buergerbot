@@ -1,0 +1,25 @@
+org: eliandor
+app: buergerbot
+service: buergerbot
+
+frameworkVersion: '3'
+
+custom:
+  wsgi:
+    app: app.app
+
+provider:
+  name: aws
+  runtime: python3.9
+  region: eu-central-1
+
+functions:
+  api:
+    handler: wsgi_handler.handler
+    events:
+      - http: ANY /
+
+plugins:
+  # - serverless-offline # for local development
+  - serverless-wsgi
+  - serverless-python-requirements

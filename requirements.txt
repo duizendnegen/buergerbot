@@ -1,8 +1,7 @@
+Flask
+Werkzeug
 beautifulsoup4
-pyshorteners
 requests
-flask
-flask-socketio
 apscheduler
 gevent
-uwsgi
+markupsafe==2.0.1
